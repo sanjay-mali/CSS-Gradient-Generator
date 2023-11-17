@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Gradient Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>CSS Gradient Generator</h1>
+    <div class="main">
+        <div class="top">
+            <div class="container">
+                <div class="input-group">
+                    <label for="color1">Start Color :</label>
+                    <input type="color" id="color1" name="color1" class="color-input" value="#474bff">
+                </div>
+
+                <div class="input-group">
+                    <label for="color2">End Color :</label>
+                    <input type="color" id="color2" name="color2" class="color-input" value="#bc48ff">
+                </div>
+
+                <div class=" input-group">
+                    <label for="rangeInput">Angle:</label>
+                    <span id="rangeValue"> </span>
+                    <input type="range" id="rangeInput" name="rangeInput" min="0" max="360" value="0" class="range-input">
+
+                </div>
+            </div>
+            <div class="colorBox">
+                <div class="box">
+
+                </div>
+            </div>
+
+        </div>
+
+            <div class="buttom">
+                <div class="code">
+                    <code>
+                        <span class="bg"></span><br>
+                        <span class="bglg"></span><br>
+                        <span class="bgwlg"></span>
+                    </code>
+                </div>
+        </div>
+    </div>
+    <script>
+
+        const inputs = document.querySelectorAll('.container input')
+        inputs.forEach(input => input.addEventListener('change', update))
+        inputs.forEach(input => input.addEventListener('mousemove', update))
+
+        function update(){
+            const start_color = document.getElementById('color1').value
+            const end_color = document.getElementById('color2').value
+            const angle = document.getElementById('rangeInput').value
+            
+            const box = document.querySelector('.box')
+            box.style.background = `linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`;
+            box.style.background = `-webkit-linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`          
+
+            document.querySelector('.bg').innerHTML = `background:  #474bff`
+            document.querySelector('.bglg').innerHTML = `background = linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`;
+            document.querySelector('.bgwlg').innerHTML = `background = -webkit-linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)` 
+
+
+            
+        }
+
+
+        const rangeValue = document.getElementById('rangeValue');
+        const rangeInput = document.getElementById('rangeInput');
+        rangeInput.addEventListener('input', function () {
+            rangeValue.textContent = rangeInput.value + "°";
+        });
+    </script>
+</body>
+
+</html>

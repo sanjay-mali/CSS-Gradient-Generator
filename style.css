@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    /* margin: 2rem 0; */
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    color: #bc48ff;
+    font-weight: 800;
+
+}
+
+.main {
+    height: 90vh;
+    width: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 45px;
+    padding: 60px 45px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid  rgb(213, 203, 203);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.color-input {
+    /* padding: 8px; */
+    /* border: 1px solid #ccc; */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.range-input {
+    width: 100%;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+}
+
+.box {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    background: linear-gradient(0deg, #474bff 0%, #bc48ff 100%);
+
+}
+
+.code {
+    border: 1px solid;
+    padding: 1rem;
+
+    & span {
+        color: #474bff;
+        font-weight: 700;
+    }
+}
+
+.buttom {
+    width: 60%;
+    margin: 2rem auto;
+}
+@media (max-width:540px) {
+    .top{
+        flex-direction: column;
+
+        & .container{
+            width: 100%;
+        }
+    }
+    .buttom{
+        width: 100%;
+    }
+    
+}
