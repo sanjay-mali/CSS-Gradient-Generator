@@ -39,11 +39,8 @@ If you want to contribute or make changes:
 
 ## Demo
 
-You can access the live demo of the CSS Gradient Generator [here](https://random-meal-generators.netlify.app/).
+You can access the live demo of the CSS Gradient Generator [here](https://sanjay-mali.github.io/CSS-Gradient-Generator/).
 
-## Credits
-
-This project was inspired by [Your Inspiration Source].
 
 ## License
 
