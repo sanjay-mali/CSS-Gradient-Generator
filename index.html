@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Gradient Generator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <h1>CSS Gradient Generator</h1>
+    <div class="gradient"></div>
     <div class="main">
-        <div class="top">
-            <div class="container">
-                <div class="input-group">
-                    <label for="color1">Start Color :</label>
-                    <input type="color" id="color1" name="color1" class="color-input" value="#474bff">
-                </div>
+      <div class="top">
+        <div class="container">
+          <div class="input-group">
+            <label for="color1">Start Color :</label>
+            <input
+              type="color"
+              id="color1"
+              name="color1"
+              class="color-input"
+              value="#474bff"
+            />
+          </div>
 
-                <div class="input-group">
-                    <label for="color2">End Color :</label>
-                    <input type="color" id="color2" name="color2" class="color-input" value="#bc48ff">
-                </div>
+          <div class="input-group">
+            <label for="color2">End Color :</label>
+            <input
+              type="color"
+              id="color2"
+              name="color2"
+              class="color-input"
+              value="#bc48ff"
+            />
+          </div>
 
-                <div class=" input-group">
-                    <label for="rangeInput">Angle:</label>
-                    <span id="rangeValue"> </span>
-                    <input type="range" id="rangeInput" name="rangeInput" min="0" max="360" value="0"
-                        class="range-input">
-
-                </div>
-            </div>
-            <div class="colorBox">
-                <div class="box">
-
-                </div>
-            </div>
-
+          <div class="input-group">
+            <label for="rangeInput">Angle:</label>
+            <span id="rangeValue"> </span>
+            <input
+              type="range"
+              id="rangeInput"
+              name="rangeInput"
+              min="0"
+              max="360"
+              value="0"
+              class="range-input"
+            />
+          </div>
         </div>
-
-        <div class="buttom">
-            <div class="code">
-                <code>
-                        <span class="bg"></span><br>
-                        <span class="bglg"></span><br>
-                        <span class="bgwlg"></span>
-                    </code>
-            </div>
+        <div class="colorBox">
+          <div class="box"></div>
         </div>
+      </div>
+
+      <div class="buttom">
+        <div class="code">
+          <code>
+            <span class="bg"></span><br />
+            <span class="bglg"></span><br />
+            <span class="bgwlg"></span>
+          </code>
+        </div>
+      </div>
     </div>
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>

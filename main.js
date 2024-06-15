@@ -1,40 +1,37 @@
+const cursor = document.querySelector(".gradient");
 
-        const inputs = document.querySelectorAll('.container input')
+document.addEventListener("mousemove", function (e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+});
 
-        inputs.forEach(input => input.addEventListener('change', update))
+const inputs = document.querySelectorAll(".container input");
+inputs.forEach((input) => input.addEventListener("change", update));
+inputs.forEach((input) => input.addEventListener("mousemove", update));
+function update() {
+  const start_color = document.getElementById("color1").value;
+  const end_color = document.getElementById("color2").value;
+  const angle = document.getElementById("rangeInput").value;
 
-        inputs.forEach(input => input.addEventListener('mousemove', update))
+  cursor.style.backgroundImage = `linear-gradient(${angle}deg, ${start_color} 10%, ${end_color})`;
 
-        function update(){
+  const box = document.querySelector(".box");
+  box.style.background = `linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`;
+  box.style.background = `-webkit-linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`;
+  document.querySelector(".bg").innerHTML = `background : #474bff`;
 
-            const start_color = document.getElementById('color1').value
+  document.querySelector(
+    ".bglg"
+  ).innerHTML = `background : linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`;
+  document.querySelector(
+    ".bgwlg"
+  ).innerHTML = `background : -webkit-linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`;
+}
 
-            const end_color = document.getElementById('color2').value
+const rangeValue = document.getElementById("rangeValue");
+const rangeInput = document.getElementById("rangeInput");
 
-            const angle = document.getElementById('rangeInput').value
-            
-            const box = document.querySelector('.box')
-
-            box.style.background = `linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`;
-
-            box.style.background = `-webkit-linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`          
-
-            document.querySelector('.bg').innerHTML = `background:  #474bff`
-            
-            document.querySelector('.bglg').innerHTML = `background = linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)`;
-
-            document.querySelector('.bgwlg').innerHTML = `background = -webkit-linear-gradient(${angle}deg, ${start_color} 0%, ${end_color} 100%)` 
-
-
-            
-        }
-
-
-        const rangeValue = document.getElementById('rangeValue');
-        const rangeInput = document.getElementById('rangeInput');
-
-        rangeInput.addEventListener('input', function () {
-
-            rangeValue.textContent = rangeInput.value + "°";
-            
-        });
+rangeInput.addEventListener("input", function () {
+  rangeValue.textContent = rangeInput.value + "°";
+});
